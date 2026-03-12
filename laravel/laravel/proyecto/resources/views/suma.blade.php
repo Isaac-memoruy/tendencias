@@ -1,17 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Suma</title>
 </head>
 <body>
-    <h1>Sumar dos numeros </h1>
-    <form action="/sumar" method="post">
-        @csrf
-        <label for="num1">Numero 1:</label>
-        
 
-    </form>
+<h1>Sumar dos numeros</h1>
+
+<form action="/suma" method="POST">
+    @csrf
+
+    <label>Numero 1:</label>
+    <input type="number" name="num1" required>
+
+    <br><br>
+
+    <label>Numero 2:</label>
+    <input type="number" name="num2" required>
+
+    <br><br>
+
+    <button type="submit">Sumar</button>
+
+</form>
+
+<br>
+
+Resultado:
+
+@if(isset($resultado))
+    <strong>{{ $resultado }}</strong>
+@endif
+
 </body>
 </html>
